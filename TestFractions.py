@@ -2,6 +2,10 @@ import unittest
 import math
 from fractions import Fraction
 
+# Commands to Run
+# python -m coverage run -m unittest discover
+# python -m coverage html
+
 # Our Three Test Functions from Codebase
 def multiply_fractions(a, b):
     na, da = a._numerator, a._denominator
@@ -63,7 +67,7 @@ class TestFractionFunctions(unittest.TestCase):
        # self.assertEqual((multiply_fractions(Fraction(6, 15), Fraction(10, 9))), Fraction(4, 9)) #gcd between all fractions
        #
 
-    def test_add_positive_fractions(self):
+    def test_subtract_positive_fractions(self):
         # g == 1
         a = Fraction(1, 2)
         b = Fraction(1, 3)
@@ -92,13 +96,13 @@ class TestFractionFunctions(unittest.TestCase):
         a = Fraction(3, 11)
         b = Fraction(5, 7)
         result = subtract_fractions(a, b)
-        self.assertEqual(result, Fraction(-8, 77))
+        self.assertEqual(result, Fraction(-34, 77))
 
         # result < -1
         a = Fraction(3, 11)
         b = Fraction(9, 7)
         result = subtract_fractions(a, b)
-        self.assertEqual(result, Fraction(-90, 77))
+        self.assertEqual(result, Fraction(-78, 77))
 
         with self.assertRaises(ZeroDivisionError):
             a = Fraction(1, 0)
@@ -136,7 +140,7 @@ class TestFractionFunctions(unittest.TestCase):
         a = Fraction(3, 11)
         b = Fraction(5, 7)
         result = add_fractions(a, b)
-        self.assertEqual(result, Fraction(15, 77))  # no factor
+        self.assertEqual(result, Fraction(76, 77))  # no factor
 
 
         a = Fraction(3, 11)
